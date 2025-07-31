@@ -27,7 +27,7 @@ This exercise shows basic data-cleaning steps on synthetic sensor data, focusing
    ```
    Then run:
    ```sh
-   python clean_data1.py
+   python sensor_data_cleaning.py
    ```
 
 2. **View the generated images:**
