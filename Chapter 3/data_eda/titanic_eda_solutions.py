@@ -22,7 +22,7 @@ titanic['family_size'] = titanic['SibSp'] + titanic['Parch'] + 1
 titanic['family_size'].unique()
 
 # survival rates of age and sex
-titanic.pivot_table('Survived', index=['Age_bin', 'Sex']) # survival rates among ange and sex
+titanic.pivot_table('Survived', index=['Age_bin', 'Sex'])
 # mean of family members of each class and sex
 titanic.pivot_table('family_size', index=['Pclass', 'Sex'], aggfunc='mean') 
 
