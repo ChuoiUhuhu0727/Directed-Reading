@@ -3,7 +3,7 @@
 This exercise shows basic data-cleaning steps on synthetic sensor data, focusing on handling missing values and visualizing data distribution before-and-after cleaning. 
 
 ## Contents
-- 'sensor_data_cleaning': Python code to generate, analyze, clean and visualize sensor data
+- `sensor_data_cleaning.py`: Python code to generate, analyze, clean and visualize sensor data
 - `humidity_before_cleaning.png`, `humidity_after_cleaning.png`, `temp_before_cleaning.png`, `temp_after_cleaning.png`: images of data before and after cleaning. Humidity and Temperature are 2 main scales of this dataset
 
 ## Data Generation
@@ -20,7 +20,7 @@ This exercise shows basic data-cleaning steps on synthetic sensor data, focusing
 
 ## Usage 
 1. **Run the script:**
-  The code is in "sensor_data_cleaning".
+  The code is in `sensor_data_cleaning`.
   Make sure you have the required libraries:
   ```sh
    pip install pandas numpy matplotlib
