@@ -1,6 +1,7 @@
 import pandas as pd
 import numexpr
 
+# Load & Overview data
 pop_df = pd.read_csv('state-population.csv')
 area_df = pd.read_csv('state-areas.csv')
 abb_df = pd.read_csv('state-abbrevs.csv')
@@ -24,14 +25,18 @@ pop_merged.loc[pop_merged['state/region'] == 'PR', 'state'] = 'Puerto Rico'
 pop_merged.loc[pop_merged['state/region'] == 'USA', 'state'] = 'United States'
 pop_merged.isnull().any()
 
+# Left join on "state" column
 all_merged = pop_merged.merge(area_df, on='state', how='left')
 all_merged.head()
 
+# Filter data
 data2010 = all_merged.query("year == 2010 & ages == 'total'")
 data2010.head()
 
-data2010 = all_merged.query("year == 2010 & ages == 'total'").copy()
+# Assign new indices
+data2010 = all_merged.query("year == 2010 & ages == 'total'").copy() 
 data2010.set_index('state', inplace=True)
+# Calculate population density
 density = data2010['population'] / data2010['area (sq. mi)']
 
 density.sort_values(ascending=False, inplace=True)
@@ -54,7 +59,8 @@ pop_merged['year'].unique()
 missing_state = pop_merged[pop_merged['state'].isnull()]
 missing_state[['state/region', 'ages', 'year']].drop_duplicates()
 
-# Handle missing data in the 'state' column by mapping from 'state/region'
+# Handle missing data in the 'state' column 
+# by mapping from 'state/region'
 pop_merged.loc[pop_merged['state'].isnull(), 'state'] = pop_merged.loc[pop_merged['state'].isnull(), 'state/region']
 pop_merged.isna().sum()
 
@@ -67,7 +73,7 @@ missing_state['ages'].unique()
 # null state in which year
 missing_state['year'].unique()
 
-# 5: Handling Special Cases
+# Handling Special Cases
 pop_merged.loc[pop_merged['state'].isnull(), 'state'] = pop_merged.loc[pop_merged['state'].isnull(), 'state/region']
 pop_merged.isna().sum()
 
