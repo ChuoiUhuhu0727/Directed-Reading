@@ -37,6 +37,6 @@ This exercise shows basic data-cleaning steps on synthetic sensor data, focusing
 ## Learning Points
 - Get accustomed to 1 out of 4 most popular data-missing scenerios (missing with patterns)
 - Practice data-filling techinques:
-    - mapping, backfill, forward fill: for small dataset
-    - interpolation: for large dataset
-- Visulize and compare data before and after cleaning
+    - Mapping, backfill, forward fill: for small dataset
+    - Interpolation: for large dataset
+- Visualize and compare data before and after cleaning
